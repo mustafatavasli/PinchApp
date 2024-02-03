@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D60353C72B6EB5C8000E6AE5 /* ControlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60353C62B6EB5C8000E6AE5 /* ControlImageView.swift */; };
 		D636D6242B6CDACF000D6A76 /* PinchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D636D6232B6CDACF000D6A76 /* PinchApp.swift */; };
 		D636D6262B6CDACF000D6A76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D636D6252B6CDACF000D6A76 /* ContentView.swift */; };
 		D636D6282B6CDAD0000D6A76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D636D6272B6CDAD0000D6A76 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D60353C62B6EB5C8000E6AE5 /* ControlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageView.swift; sourceTree = "<group>"; };
 		D636D6202B6CDACF000D6A76 /* Pinch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D636D6232B6CDACF000D6A76 /* PinchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchApp.swift; sourceTree = "<group>"; };
 		D636D6252B6CDACF000D6A76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				D6FB7DB02B6D863A00190F31 /* InfoPanelView.swift */,
+				D60353C62B6EB5C8000E6AE5 /* ControlImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D60353C72B6EB5C8000E6AE5 /* ControlImageView.swift in Sources */,
 				D636D6262B6CDACF000D6A76 /* ContentView.swift in Sources */,
 				D636D6242B6CDACF000D6A76 /* PinchApp.swift in Sources */,
 				D6FB7DB12B6D863A00190F31 /* InfoPanelView.swift in Sources */,

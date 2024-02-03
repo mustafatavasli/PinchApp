@@ -19,9 +19,9 @@ struct ContentView: View {
     
     func resetImageState() {
         return withAnimation(.spring()) {
-                imageScale = 1
-                imageOffset = .zero
-            }
+            imageScale = 1
+            imageOffset = .zero
+        }
     }
     
     // MARK: CONTENT
@@ -40,8 +40,8 @@ struct ContentView: View {
                     .opacity(isAnimating ? 1 : 0)
                     .offset(x: imageOffset.width, y: imageOffset.height)
                     .scaleEffect(imageScale)
-                    // MARK: 1. TAP GESTURE
-                    // Iki kere basildiginda imageScale 1 ise 5 olur; 1 degilse default ayarina doner.
+                // MARK: 1. TAP GESTURE
+                // Iki kere basildiginda imageScale 1 ise 5 olur; 1 degilse default ayarina doner.
                     .onTapGesture(count: 2, perform: {
                         if imageScale == 1 {
                             withAnimation(.spring()) {
@@ -52,7 +52,7 @@ struct ContentView: View {
                             resetImageState()
                         }
                     })
-                    // MARK: 2. DRAG GESTURE
+                // MARK: 2. DRAG GESTURE
                     .gesture(
                         DragGesture()
                             .onChanged { value in
@@ -80,6 +80,61 @@ struct ContentView: View {
                     .padding(.horizontal)
                     .padding(.top, 30),
                 alignment: .top
+            )
+            // MARK: CONTROLS
+            .overlay(
+                Group {
+                    HStack {
+                        // Scale Down
+                        Button {
+                            withAnimation(.spring()) {
+                                // Ana Islev
+                                if imageScale > 1 {
+                                    imageScale -= 1
+                                    
+                                    // Safety Precaution
+                                    if imageScale <= 1 {
+                                        resetImageState()
+                                    }
+                                }
+                                
+                            }
+                        } label: {
+                            ControlImageView(icon: "minus.magnifyingglass")
+                        }
+                        // Reset
+                        Button {
+                            resetImageState()
+                        } label: {
+                            ControlImageView(icon: "arrow.up.left.and.down.right.magnifyingglass")
+                        }
+                        
+                        // Scale Up
+                        Button {
+                            withAnimation(.spring()) {
+                                // Ana Islev
+                                if imageScale < 5 {
+                                    imageScale += 1
+                                    
+                                    // Safety Precaution
+                                    if imageScale > 5 {
+                                        imageScale = 5
+                                    }
+                                }
+                                
+                            }
+                        } label: {
+                            ControlImageView(icon: "plus.magnifyingglass")
+                        }
+                    }
+                    .padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+                    .background(.ultraThinMaterial)
+                    .presentationCornerRadius(12)
+                    .opacity(isAnimating ? 1 : 0)
+                }
+                    .padding(.bottom, 30),
+                alignment: .bottom
+                
             )
         }
         .navigationViewStyle(.stack)
